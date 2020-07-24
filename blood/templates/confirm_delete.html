@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %} Delete confimation {% endblock %}
+
+{% block body %}
+
+<div class="del" style="margin-left: 408px;
+    font-size: larger;
+    width: 405px;
+    height: 200px;
+    
+    margin-top: 116px;
+    border-radius: 6px;">
+
+	<form method="post">{% csrf_token %}
+    <p style="margin-left: 46px;font-size: medium; font-weight: 600;">Are you sure you want to delete "{{ object }}"?</p>
+    <a href="{% url 'home' %}"><button class="btn btn-danger" style="margin-left: 88px;margin-top: 57px;box-shadow: 2px 3px black;"><i class="fa fa-times" aria-hidden="true">cancel</i></button></a>  <button type="submit" class="btn btn-success" style=" margin-left: 8px;margin-top: 54px;box-shadow: 2px 3px black;"><i class="fa fa-check-square-o" aria-hidden="true">confirm</i></button>
+</form>
+
+</div>
+                
+{% endblock %}
